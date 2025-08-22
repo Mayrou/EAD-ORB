@@ -1,7 +1,7 @@
 # EAD-ORB
 
 Official C++ implementation for the paper:  
-**"EAD-ORB: Robust Feature Matching via Entropy-Guided Detection and Adaptive Description"** *(ZhiHeng Tang, Yan Dou, Xiaoya Wang, Lele Zhang)*
+
 
 This repository contains the source code for the EAD-ORB feature matching algorithm, designed to overcome the limitations of standard ORB in challenging conditions such as drastic illumination changes and low-texture regions.
 
