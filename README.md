@@ -7,7 +7,7 @@ This repository contains the source code for the EAD-ORB feature matching algori
 
 ---
 
-## Qualitative Results
+## Dataset
 
 A quick comparison between standard ORB (Top) and our EAD-ORB (Bottom) on the challenging `leuven` sequence (severe illumination change).
 
@@ -20,20 +20,11 @@ A quick comparison between standard ORB (Top) and our EAD-ORB (Bottom) on the ch
 
 The following dependencies are required to build the project:
 
-* **CMake** (>= 3.10)
 * **OpenCV** (>= 4.0)
 * **C++14 compliant compiler** (e.g., g++ or Clang)
 
 ---
 
-## Build Instructions
+## Structure and others
 
-To build the project, clone this repository and run the following commands from the root directory:
-
-```bash
-git clone [https://github.com/your_username/EAD-ORB.git](https://github.com/your_username/EAD-ORB.git)
-cd EAD-ORB
-mkdir build
-cd build
-cmake ..
-make
+will be announced after the paper is accepted.
