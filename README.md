@@ -1,6 +1,5 @@
 # EAD-ORB
-
-Official C++ implementation for the paper:  Enhanced Feature Matching: Entropy-Guided ORB with Adaptive Descriptors
+### Official C++ Implementation of "Enhanced Feature Matching: Entropy-Guided ORB with Adaptive Descriptors"
 
 
 This repository contains the source code for the EAD-ORB feature matching algorithm, designed to overcome the limitations of standard ORB in challenging conditions such as drastic illumination changes and low-texture regions.
