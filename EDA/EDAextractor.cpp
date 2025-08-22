@@ -1150,11 +1150,11 @@ namespace ORB
 
     void EDAextractor::ComputePyramid(cv::Mat image)
     {
-        //±éÀúÃ¿Ò»²ãµÄÍ¼Ïñ½ğ×ÖËş
+        //éå†æ¯ä¸€å±‚çš„å›¾åƒé‡‘å­—å¡”
         for (int level = 0; level < nlevels; ++level)
         {
-            //scale ÊÇÃ¿Ò»²ãµÄËõ·ÅÒò×Ó,sz ±íÊ¾Ëõ·ÅºóµÄÍ¼Ïñ´óĞ¡,wholeSize ÊÇËõ·ÅºóÍ¼Ïñ¼ÓÉÏ±ß½çºóµÄ×Ü³ß´ç£¬ÓÃÓÚ¼õĞ¡±ßÔµĞ§Ó¦¶ÔÍ¼Ïñ±ßÔµ¹Ø¼üµã¼ì²âµÄÓ°Ïì,
-            //temp ÊÇ°üº¬Í¼ÏñÄÚÈİºÍ±ß½çµÄÁÙÊ±Í¼Ïñ,mvImagePyramid[level] ÓÃÓÚ´æ´¢È¥µô±ß½çµÄËõ·ÅÍ¼ÏñÄÚÈİ
+            //scale æ˜¯æ¯ä¸€å±‚çš„ç¼©æ”¾å› å­,sz è¡¨ç¤ºç¼©æ”¾åçš„å›¾åƒå¤§å°,wholeSize æ˜¯ç¼©æ”¾åå›¾åƒåŠ ä¸Šè¾¹ç•Œåçš„æ€»å°ºå¯¸ï¼Œç”¨äºå‡å°è¾¹ç¼˜æ•ˆåº”å¯¹å›¾åƒè¾¹ç¼˜å…³é”®ç‚¹æ£€æµ‹çš„å½±å“,
+            //temp æ˜¯åŒ…å«å›¾åƒå†…å®¹å’Œè¾¹ç•Œçš„ä¸´æ—¶å›¾åƒ,mvImagePyramid[level] ç”¨äºå­˜å‚¨å»æ‰è¾¹ç•Œçš„ç¼©æ”¾å›¾åƒå†…å®¹
             float scale = mvInvScaleFactor[level];
             Size sz(cvRound((float)image.cols * scale), cvRound((float)image.rows * scale));
             Size wholeSize(sz.width + EDGE_THRESHOLD * 2, sz.height + EDGE_THRESHOLD * 2);
@@ -1162,9 +1162,9 @@ namespace ORB
             mvImagePyramid[level] = temp(Rect(EDGE_THRESHOLD, EDGE_THRESHOLD, sz.width, sz.height));
 
             // Compute the resized image
-            //Ëõ·ÅÍ¼ÏñÉú³É
-            //¶ÔÓÚ½ğ×ÖËşµÄµÚ 0 ²ã£¨¼´Ô­Í¼Ïñ£©£¬½«Ô­Í¼Ïñ±ßÔµÌî³äÎª EDGE_THRESHOLD ¸öÏñËØµÄ±ß½ç£¬²¢Ê¹ÓÃ BORDER_REFLECT_101 Ä£Ê½£¬ÕâÖÖ±ß½çÄ£Ê½»á¶Ô±ßÔµÏñËØ½øĞĞ·´ÉäÌî³ä
-            //¶ÔÓÚÆäËû²ã£¬ÏÈ½«ÉÏÒ»²ãµÄÍ¼ÏñËõ·Åµ½µ±Ç°²ãµÄ³ß´ç£¬ÔÙ½«±ß½çÌî³äµ½ temp£¬×îÖÕ±£´æµ½ mvImagePyramid[level]
+            //ç¼©æ”¾å›¾åƒç”Ÿæˆ
+            //å¯¹äºé‡‘å­—å¡”çš„ç¬¬ 0 å±‚ï¼ˆå³åŸå›¾åƒï¼‰ï¼Œå°†åŸå›¾åƒè¾¹ç¼˜å¡«å……ä¸º EDGE_THRESHOLD ä¸ªåƒç´ çš„è¾¹ç•Œï¼Œå¹¶ä½¿ç”¨ BORDER_REFLECT_101 æ¨¡å¼ï¼Œè¿™ç§è¾¹ç•Œæ¨¡å¼ä¼šå¯¹è¾¹ç¼˜åƒç´ è¿›è¡Œåå°„å¡«å……
+            //å¯¹äºå…¶ä»–å±‚ï¼Œå…ˆå°†ä¸Šä¸€å±‚çš„å›¾åƒç¼©æ”¾åˆ°å½“å‰å±‚çš„å°ºå¯¸ï¼Œå†å°†è¾¹ç•Œå¡«å……åˆ° tempï¼Œæœ€ç»ˆä¿å­˜åˆ° mvImagePyramid[level]
             if (level != 0)
             {
                 resize(mvImagePyramid[level - 1], mvImagePyramid[level], sz, 0, 0, INTER_LINEAR);
