@@ -8,11 +8,14 @@ This repository contains the source code for the EAD-ORB feature matching algori
 ---
 
 ## Dataset
+The experiments in our paper were conducted on the following standard benchmarks. Our method is training-free, so these datasets are used for evaluation only.
 
-A quick comparison between standard ORB (Top) and our EAD-ORB (Bottom) on the challenging `leuven` sequence (severe illumination change).
+1.  **HPatches Benchmark** A large-scale benchmark for evaluating local features under both significant viewpoint and illumination changes. This was our primary platform for quantitative evaluation.
+    * **[Official Website & Download](https://hpatches.github.io/)**
 
-![Qualitative Comparison](https://i.imgur.com/your-image-link.gif)  
-*(Note: Please replace this with a link to your actual result image or GIF)*
+2.  **Oxford Affine Dataset** A classic dataset for evaluating feature robustness to various affine transformations, including blur, JPEG compression, illumination, and viewpoint changes. We used sequences from this dataset for supplementary qualitative analysis.
+    * **[Official Website & Download](https://www.robots.ox.ac.uk/~vgg/data/affine/)**
+
 
 ---
 
